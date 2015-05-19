@@ -31,37 +31,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var persistence: Persistence? = nil
-    var observer: KVObserver? = nil
-    
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Hold Persistence
         persistence = Persistence()
         
-        // Load Feed
-        println( "DEMO: - awakeFromInsert/Fetch \n" )
-        Feed.load()
-        
-        // Print TypeDescription
-        println( "\nDEMO: Regular Description of Feed \n" )
-        println( "\(Feed.typeDescription)")
-        
-        // Print Detailed Type Description
-        println( "DEMO: Detailed Description of Feed \n" )
-        println( "\(Feed.typeDetailDescription)")
-        
-        // DEMO: KVO - Retrieve a Random Post, Add Observer to Text, then Change Text
-        println( "DEMO: KVO Observation \n" )
-        if let post = Feed.fetchAnyObject(Post.typeName) as? Post {
+        if let moc = persistence?.moc {
             
-            // Add an Observer to Post.text
-            observer = KVObserver()
-            observer?.observeKeyPath(Post.typeKey.Text , object: post)
+            // Insert NSManagedObjects using Key Paths
+            if let post1: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Post", inManagedObjectContext: moc) as? NSManagedObject {
+                post1.setValue("ASDGFSADG", forKey: "id")
+                post1.setValue("Hey Bro!!!!", forKey: "text")
+            }
             
-            post.text = "This New Text Kicks Off a Key Value Observation"
-            // TODO: We must remove the category too if one exists!!!
+            if let post2: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Post", inManagedObjectContext: moc) as? NSManagedObject {
+                post2.setValue("asdfklajsdkfasdj", forKey: "id")
+                post2.setValue("This is another message Brah!!!", forKey: "text")
+            }
+            
+            // Print NSManagedObjects using Key Path
+            let fetchRequest = NSFetchRequest(entityName:"Post")
+            var posts = moc.executeFetchRequest( fetchRequest, error: nil)
+            for post in posts as! [NSManagedObject] {
+                if let text = post.valueForKeyPath("text") as? String {
+                    println("post - \(text)")
+                }
+            }
+            
         }
+        
+        // TODO: Save the data!!!
+        
         
         return true
     }

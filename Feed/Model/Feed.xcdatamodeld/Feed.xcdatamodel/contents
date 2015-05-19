@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Post" representedClassName="Feed.Post" syncable="YES">
+    <entity name="Post" representedClassName="" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PostCategory" inverseName="posts" inverseEntity="PostCategory" syncable="YES"/>
-    </entity>
-    <entity name="PostCategory" representedClassName="Feed.PostCategory" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="categories" inverseEntity="Post" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Post" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="PostCategory" positionX="151" positionY="98" width="128" height="73"/>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>
