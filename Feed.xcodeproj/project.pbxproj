@@ -19,9 +19,9 @@
 		03285C731B0A8FE000E2A176 /* Post_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C661B0A8FE000E2A176 /* Post_.swift */; };
 		03285C751B0A8FE000E2A176 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C681B0A8FE000E2A176 /* Persistence.swift */; };
 		03285C791B0A8FE000E2A176 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C6E1B0A8FE000E2A176 /* Protocols.swift */; };
-		03285C7B1B0A947100E2A176 /* PostCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C7A1B0A947100E2A176 /* PostCategory.swift */; };
-		03285C7D1B0A947100E2A176 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C7C1B0A947100E2A176 /* Post.swift */; };
 		03285C8C1B0B569200E2A176 /* Feed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03285C8A1B0B569200E2A176 /* Feed.xcdatamodeld */; };
+		03285C8F1B0B62B100E2A176 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C8D1B0B62B100E2A176 /* Post.swift */; };
+		03285C901B0B62B100E2A176 /* PostCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03285C8E1B0B62B100E2A176 /* PostCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +51,9 @@
 		03285C661B0A8FE000E2A176 /* Post_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post_.swift; sourceTree = "<group>"; };
 		03285C681B0A8FE000E2A176 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		03285C6E1B0A8FE000E2A176 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		03285C7A1B0A947100E2A176 /* PostCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCategory.swift; path = ../../PostCategory.swift; sourceTree = "<group>"; };
-		03285C7C1B0A947100E2A176 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../../Post.swift; sourceTree = "<group>"; };
 		03285C8B1B0B569200E2A176 /* Feed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Feed.xcdatamodel; sourceTree = "<group>"; };
+		03285C8D1B0B62B100E2A176 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		03285C8E1B0B62B100E2A176 /* PostCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +165,8 @@
 		03285C691B0A8FE000E2A176 /* SubClassedEntities */ = {
 			isa = PBXGroup;
 			children = (
-				03285C7C1B0A947100E2A176 /* Post.swift */,
-				03285C7A1B0A947100E2A176 /* PostCategory.swift */,
+				03285C8D1B0B62B100E2A176 /* Post.swift */,
+				03285C8E1B0B62B100E2A176 /* PostCategory.swift */,
 			);
 			path = SubClassedEntities;
 			sourceTree = "<group>";
@@ -280,16 +280,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				03285C751B0A8FE000E2A176 /* Persistence.swift in Sources */,
-				03285C7D1B0A947100E2A176 /* Post.swift in Sources */,
+				03285C901B0B62B100E2A176 /* PostCategory.swift in Sources */,
 				03285C6F1B0A8FE000E2A176 /* KVObserver.swift in Sources */,
 				03285C411B0A8ADE00E2A176 /* ViewController.swift in Sources */,
 				03285C721B0A8FE000E2A176 /* PostCategory_.swift in Sources */,
 				03285C701B0A8FE000E2A176 /* Feed.swift in Sources */,
 				03285C731B0A8FE000E2A176 /* Post_.swift in Sources */,
 				03285C8C1B0B569200E2A176 /* Feed.xcdatamodeld in Sources */,
-				03285C7B1B0A947100E2A176 /* PostCategory.swift in Sources */,
 				03285C791B0A8FE000E2A176 /* Protocols.swift in Sources */,
 				03285C3F1B0A8ADE00E2A176 /* AppDelegate.swift in Sources */,
+				03285C8F1B0B62B100E2A176 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
