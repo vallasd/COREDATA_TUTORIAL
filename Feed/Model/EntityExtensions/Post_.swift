@@ -32,15 +32,6 @@ extension Post: Printable {
     
 }
 
-extension Post {
-    
-    override func awakeFromInsert() { println("***awakeFromInsert - New Post Created") }
-    
-    override func awakeFromFetch() { println("***awakeFromFetch - Post \(self.id) Fetched") }
-    
-
-}
-
 extension Post: TypePrintable {
     
     class var typeName: String { get { return "Post" } }
@@ -75,4 +66,12 @@ extension Post: TypePrintable {
             return dd
         }
     }
+}
+
+// AWAKABLE
+extension Post {
+    
+    override func awakeFromInsert() { println("***awakeFromInsert - New Post Created") }
+    override func awakeFromFetch() { println("***awakeFromFetch - Post \(self.id) Fetched") }
+    
 }

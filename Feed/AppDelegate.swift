@@ -39,6 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Hold Persistence
         persistence = Persistence()
         
+        
+        
+        return true
+    }
+    
+    // TODO: THIS IS A DEMO SCRIPT, WE SHOULD REMOVE THIS OR MAKE A TEST LATER
+    func demoFeed() {
         // Load Feed
         println( "DEMO: - awakeFromInsert/Fetch \n" )
         Feed.load()
@@ -62,8 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             post.text = "This New Text Kicks Off a Key Value Observation"
             // TODO: We must remove the category too if one exists!!!
         }
-        
-        return true
     }
     
     func applicationWillResignActive(application: UIApplication) {

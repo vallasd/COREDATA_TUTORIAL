@@ -9,8 +9,19 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="categories" inverseEntity="Post" syncable="YES"/>
     </entity>
+    <entity name="Word" representedClassName="Feed.Word" syncable="YES">
+        <attribute name="length" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="wordCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WordCategory" inverseName="words" inverseEntity="WordCategory" syncable="YES"/>
+    </entity>
+    <entity name="WordCategory" representedClassName="Feed.WordCategory" syncable="YES">
+        <attribute name="firstLetter" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="wordCategory" inverseEntity="Word" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Post" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="PostCategory" positionX="151" positionY="98" width="128" height="73"/>
+        <element name="Word" positionX="-270" positionY="191" width="128" height="88"/>
+        <element name="WordCategory" positionX="-441" positionY="117" width="128" height="73"/>
     </elements>
 </model>

@@ -15,14 +15,14 @@ Please check out the different branches in this project to follow the progressio
 * Demos NSManagedObject Subclassing (Post, PostCategory)
 * Demos NSManagedObject Extensions (Post_, PostCategory_)
 * Demos Adding, Deleting, Changing Entities (Feed, AppDelegate)
-* Demos use of Structs for KeyPath retrieval for an NSManagedObject (Post_, PostCategory_ *TypePrintable)
-* Demos protocol and class vars to Print EntityNames and Descriptions (Post_, Protocol *TypePrintable)
+* Demos use of Structs for KeyPath retrieval for an NSManagedObject (Post_, PostCategory_)
+* Demos protocol and class vars to Print EntityNames and Descriptions (Post_, Protocol)
 * Demos use of class vars to return ManagedObjectContexts (Feed)
 * Demos awakeFromFetch / awakeFromInsert - (Post_)
 * Demos Basic KVO principle, this will be expanded at a later time (KVObserver, AppDelegate) 
 
 ### FEED_3 - Covers Concepts Found in BOOK-TITLE: Chapter 3.
-* TBD
+* Demos ManagedObjectID fetch optimization (Feed deleteAllObjects)
 
 ## Motivation
 

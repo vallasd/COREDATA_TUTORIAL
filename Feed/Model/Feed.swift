@@ -88,13 +88,14 @@ class Feed {
     
     class func deleteAllObjects(entityName: String) {
         let moc = self.moc
-        let fetchRequest = NSFetchRequest(entityName: entityName)
-        let objects = moc.executeFetchRequest(fetchRequest, error: nil)
-        for object in objects as! [NSManagedObject] { moc.deleteObject(object) }
-        var error: NSError? = nil
-        if !moc.save(&error) {
-            println(" Error deleting \(entityName) - error:\(error)")
-        }
+        var fetchRequest = NSFetchRequest(entityName: entityName)
+        // We are using .ManagedObjectIDResultType since we don't need the entire
+        // object to delete it, this is an optimization that reduces memory usage
+        // for large fetches
+        fetchRequest.resultType = .ManagedObjectIDResultType
+        let objectIDs = moc.executeFetchRequest(fetchRequest, error: nil) as! [NSManagedObjectID]
+        for objectID in objectIDs { moc.objectWithID(objectID) }
+        persistence.saveContext()
     }
     
     class func fetchAllObjects(entityName: String) -> [AnyObject]? {
@@ -135,5 +136,4 @@ extension Feed: TypePrintable {
             return dd
         }
     }
-    
 }
